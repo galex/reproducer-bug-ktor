@@ -1,0 +1,41 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'application'
+
+mainClassName = "io.ktor.server.netty.EngineMain"
+
+repositories {
+    mavenLocal()
+    jcenter()
+    maven { url 'https://kotlin.bintray.com/ktor' }
+    maven { url "https://kotlin.bintray.com/kotlinx" }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation "io.ktor:ktor-server-netty:$ktor_version"
+    implementation "io.ktor:ktor-velocity:$ktor_version"
+    implementation "io.ktor:ktor-server-core:$ktor_version"
+    implementation "io.ktor:ktor-gson:$ktor_version"
+    implementation "io.ktor:ktor-auth:$ktor_version"
+    implementation "io.ktor:ktor-auth-jwt:$ktor_version"
+    implementation "ch.qos.logback:logback-classic:$logback_version"
+    implementation "com.example:example-core-backend:$example_core_version"
+    implementation "org.jetbrains.exposed:exposed:$exposed_version"
+    implementation "com.h2database:h2:$h2_version"
+    implementation "com.zaxxer:HikariCP:$hikariCP_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.10.0"
+
+    testImplementation "io.ktor:ktor-server-tests:$ktor_version"
+}
+
+

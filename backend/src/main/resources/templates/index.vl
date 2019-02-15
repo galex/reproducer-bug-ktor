@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="/static/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/main.css">
+    <meta charset="UTF-8">
+    <title>example API page velocity</title>
+</head>
+
+<body>
+Hello, $name
+</body>
+</html>

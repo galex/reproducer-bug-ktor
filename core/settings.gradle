@@ -1,0 +1,17 @@
+pluginManagement {
+    repositories {
+        maven { setUrl("https://kotlin.bintray.com/kotlin-eap") }
+        gradlePluginPortal()
+    }
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.id == "kotlin-multiplatform") {
+                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
+            }
+        }
+    }
+}
+rootProject.name = 'example-core'
+
+
+//enableFeaturePreview('GRADLE_METADATA')
